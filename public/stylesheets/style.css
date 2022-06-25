@@ -1,0 +1,33 @@
+html, body {
+    color: white;
+    background-color: black;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+li:not(:last-child) {
+    margin-right: 10px;
+}
+
+a {
+    color: white;
+    font-size: large;
+    text-decoration: none;
+}
+
+a:hover {
+    color: cyan;
+}
+
+table, th, td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+td, th, td > a {
+    padding: 5px 10px;
+}
