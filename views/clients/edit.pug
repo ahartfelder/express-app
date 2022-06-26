@@ -1,0 +1,13 @@
+extends ../app.pug
+
+block content
+    form(action=`/clients/${client.id}?_method=PUT`, method="post")
+        label(for="name") Name:
+        br
+        input#name(type="text" name="name" value=`${client.name}` placeholder="Enter client name" required)
+        br  
+        label(for="email") Email:
+        br
+        input#email(type="email" name="email" value=`${client.email}` placeholder="Enter client email" required)
+        br
+        button(type="submit" value="submit") Update Client 

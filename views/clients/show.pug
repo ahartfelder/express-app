@@ -1,4 +1,7 @@
 extends ../app.pug
 
 block content
-    h1 Client
+    h1 #{client.name}
+    h2 #{client.email}
+    div #{client.createdAt}
+    div #{client.updatedAt}

@@ -1,7 +1,10 @@
 extends ../app.pug
 
 block content
-    h1 List
+    h1 List of Clients
+
+    form(action="/clients/create", method="get")
+        button.btn(type="submit" value="submit") New Client 
 
     table
         thead
@@ -11,11 +14,13 @@ block content
                 th Email
                 th Actions
         tbody
-            tr
-                th 1
-                td John 
-                td john@mail.com
-                td
-                    a(href="#") View
-                    a(href="#") Edit
-                    a(href="#") Destroy
+            for client, index in clients
+                tr
+                    th #{client.id}
+                    td #{client.name} 
+                    td #{client.email}
+                    td
+                        a(href=`clients/${client.id}`) View
+                        a(href=`clients/${client.id}/edit`) Edit
+                        form.frm(action=`clients/${client.id}?_method=DELETE`, method="post")
+                            button.btn-hidden(type="submit", value="submit") Destroy
